@@ -12,7 +12,7 @@ type ChartData = {
 
 const DonutChart = () => {
 
-    const [chartData, setchartData] = useState<ChartData>({ labels: [], series: [] })
+    const [chartData, setChartData] = useState<ChartData>({ labels: [], series: [] })
 
     useEffect(() => {
 
@@ -21,8 +21,8 @@ const DonutChart = () => {
                 const data = response.data as SaleSum[]
                 const myLabels = data.map(x => x.sellerName)
                 const mySeries = data.map(x => x.sum)
-
-                setchartData({ labels: myLabels, series: mySeries })
+  
+                setChartData({ labels: myLabels, series: mySeries })
 
 
             });
